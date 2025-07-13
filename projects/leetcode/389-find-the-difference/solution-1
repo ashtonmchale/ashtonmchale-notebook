@@ -1,0 +1,29 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int[] count = new int[26];                          /* Array to count the number of times each letter appears in both strings; 
+                                                            creates 26 slots (from index 0 to 25). Each slot represents a letter in the alphabet: 'a' to 'z'. */
+        for (int i = 0; i < s.length(); i++) {              // Loops through each character in s and increment the count for that letter.
+            char c = s.charAt(i);                           // Gets one character at a time from the string.
+            count[c - 'a']++;                               /* c - 'a' turns the character into a number between 0 and 25 (ASCII math),
+                                                            and count[c - 'a']++ increases the count for that letter by 1. */
+        }
+
+        for (int i = 0; i < t.length(); i++) {              // Loops through every character in t (the same string as s but with one extra character).
+            char c = t.charAt(i);
+            count[c - 'a']--;                               // Subtracts 1 from the count for that character.
+            if (count[c - 'a'] < 0) {
+                return c;                                   // If subtracting makes the count go below zero, this character wasn't in s and is the extra letter.
+            }
+        }
+
+        return ' ';                                         /* Java requires that something is returned, in case the function doesn't return early. This line should never be reached
+                                                            because t is guaranteed to have one extra character. */
+    }
+
+    public void main(String[] args) {
+        String s = "abcd";                                  // Input 1
+        String t = "abcde";                                 // Input 2 (same as s but with 1 extra letter)
+        char result = findTheDifference(s, t);
+        System.out.println("The extra character is " + result);
+    }
+}

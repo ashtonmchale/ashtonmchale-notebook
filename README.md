@@ -1,6 +1,6 @@
-# am-dev-journal
+# ashtonmchale-notebook
 
-Welcome to my personal development journal—an ongoing record of my journey from computer science student to professional developer. This repository highlights the projects, research, and technical work that reflect my skills, interests, and growth.
+Welcome to my personal development notebook. It is an ongoing record of my journey from computer science student to professional developer. This repository highlights the projects, research, and technical work that reflect my skills, interests, and growth.
 
 ## 📁 Structure
 - `/projects`: Personal and academic coding projects
